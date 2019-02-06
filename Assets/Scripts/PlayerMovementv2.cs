@@ -24,9 +24,11 @@ public class PlayerMovementv2 : MonoBehaviour
     bool grounded;
     [SerializeField]
     float gravityPull = 200;
-    
-    Rigidbody rb;
+    [SerializeField]
+    Transform cameraTr;
 
+    Rigidbody rb;
+    float y;
 
     void Start()
     {
@@ -34,7 +36,19 @@ public class PlayerMovementv2 : MonoBehaviour
         grounded = true;
     }
 
-
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Q))
+        {
+            y += 40 * Time.deltaTime;
+            cameraTr.rotation = Quaternion.Euler(0, y, 0);
+        }
+        if(Input.GetKey(KeyCode.E))
+        {
+            y -= 40 * Time.deltaTime;
+            cameraTr.rotation = Quaternion.Euler(0, y, 0);
+        }
+    }
     private void FixedUpdate()
     {
 
