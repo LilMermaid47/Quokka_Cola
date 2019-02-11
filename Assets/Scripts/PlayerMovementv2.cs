@@ -33,9 +33,13 @@ public class PlayerMovementv2 : MonoBehaviour
     public float verticalSpeed = 2.0F;
     [SerializeField]
     Transform cameraTr;
+    [SerializeField]
+    Transform playerTr;
 
     Rigidbody rb;
     float y;
+    private float rotX;
+    private float rotY;
 
     void Start()
     {
@@ -45,10 +49,11 @@ public class PlayerMovementv2 : MonoBehaviour
 
     private void Update()
     {
-        float h = horizontalSpeed * Input.GetAxis("Mouse X");
-        float v = -verticalSpeed * Input.GetAxis("Mouse Y");
-        transform.Rotate(0, h, 0);
-        cameraTr.Rotate(v, 0, 0);
+        rotX += Input.GetAxis("Mouse X") * horizontalSpeed;
+        rotY += Input.GetAxis("Mouse Y") * verticalSpeed;
+        rotY = Mathf.Clamp(rotY, -60, 60);
+        cameraTr.localRotation = Quaternion.Euler(-rotY, 0f, 0f);
+        transform.rotation = Quaternion.Euler(0f, rotX, 0f);
     }
     private void FixedUpdate()
     {
