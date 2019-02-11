@@ -24,6 +24,13 @@ public class PlayerMovementv2 : MonoBehaviour
     bool grounded;
     [SerializeField]
     float gravityPull = 200;
+    
+
+    [Header("Camera")]
+    [SerializeField]
+    float horizontalSpeed = 2.0F;
+    [SerializeField]
+    public float verticalSpeed = 2.0F;
     [SerializeField]
     Transform cameraTr;
 
@@ -38,16 +45,10 @@ public class PlayerMovementv2 : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Q))
-        {
-            y += 40 * Time.deltaTime;
-            cameraTr.rotation = Quaternion.Euler(0, y, 0);
-        }
-        if(Input.GetKey(KeyCode.E))
-        {
-            y -= 40 * Time.deltaTime;
-            cameraTr.rotation = Quaternion.Euler(0, y, 0);
-        }
+        float h = horizontalSpeed * Input.GetAxis("Mouse X");
+        float v = -verticalSpeed * Input.GetAxis("Mouse Y");
+        transform.Rotate(0, h, 0);
+        cameraTr.Rotate(v, 0, 0);
     }
     private void FixedUpdate()
     {
