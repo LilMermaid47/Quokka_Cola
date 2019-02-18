@@ -38,9 +38,7 @@ public class BuilderScript : MonoBehaviour
             positionBuild = new Vector3(transform.position.x + randomBuildX, 2, transform.position.z + randomBuildZ);
             Debug.Log(positionBuild);
             navMeshAgent.SetDestination(positionBuild);
-
+            object usineInstance = Instantiate(usine, this.transform
         }
-        if (this.transform.position.x == randomBuildX)
-        { object usineInstance = Instantiate(usine, this.transform); }
     }
 }
