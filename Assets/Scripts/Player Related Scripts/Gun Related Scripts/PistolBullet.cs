@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PistolBullet : MonoBehaviour
 {
+    [SerializeField]
     float firingSpeed = 50;
 
     Vector3 firingDirection;
@@ -18,10 +19,11 @@ public class PistolBullet : MonoBehaviour
         }
     }
 
-    public void findTarget(Vector3 gunPosition)
+    public void FindTarget(Vector3 rotation, float firingOffset)
     {
         Debug.LogWarning("Firing doesn't yet work properly - PistolBullet.cs(24)");
-        firingDirection = (transform.position - gunPosition).normalized;
+        firingDirection.x = Mathf.Cos(rotation.normalized.y+firingOffset);
+        firingDirection.z = Mathf.Sin(rotation.normalized.y);
         targetFound = true;
     }
 }
