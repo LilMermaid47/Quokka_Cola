@@ -7,8 +7,6 @@ public class PistolControl : MonoBehaviour
     [SerializeField]
     Transform bulletSpawnPoint;
     [SerializeField]
-    Transform kfjh;
-    [SerializeField]
     GameObject bullet;
     [SerializeField]
     Transform playerCameraTr;
