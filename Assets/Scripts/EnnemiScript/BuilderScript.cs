@@ -41,9 +41,6 @@ public class BuilderScript : MonoBehaviour
             
             object usineInstance = Instantiate(usine,positionBuild,Quaternion.identity);
         }
-    if(isNotGoingToPosition && !isNotBuilding && this.transform.position==new Vector3(randomBuildX, randomBuildZ))
-        {
             object usineInstance = Instantiate(usine,this.transform);
-        }
     }
 }
