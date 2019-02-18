@@ -41,6 +41,5 @@ public class BuilderScript : MonoBehaviour
             
             object usineInstance = Instantiate(usine,positionBuild,Quaternion.identity);
         }
-            object usineInstance = Instantiate(usine,this.transform);
     }
 }
