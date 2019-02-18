@@ -8,9 +8,11 @@ public class WeaponManager : MonoBehaviour
     [SerializeField]
     GameObject pistol;
 
-    [Space]
+    [Header("Required Fields")]
     [SerializeField]
     Transform weaponSpawnPoint;
+    [SerializeField]
+    Transform playerCamera;
 
     GameObject spawnedWeapon;
     bool hasGun = false;
@@ -52,7 +54,6 @@ public class WeaponManager : MonoBehaviour
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
             case 2:
-                spawnedWeapon = Instantiate(pistol, weaponSpawnPoint.position, transform.rotation, transform);
                 break;
             case 0:
                 Destroy(spawnedWeapon);

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &438311795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438311796}
+  m_Layer: 0
+  m_Name: WeaponSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438311796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438311795}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.672, y: 0.07327307, z: 0.774}
+  m_LocalScale: {x: 0.3, y: 0.17040241, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2840712213957361957}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2840712213291378861
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +124,9 @@ GameObject:
   - component: {fileID: 2840712213957361958}
   - component: {fileID: 2840712213957361959}
   - component: {fileID: 2840712213957361945}
+  - component: {fileID: 214985365149406036}
   - component: {fileID: 2840712213957361946}
+  - component: {fileID: 4127636455479652110}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -114,6 +146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.7605385, z: 1}
   m_Children:
   - {fileID: 2840712213291378857}
+  - {fileID: 438311796}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,8 +209,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!136 &214985365149406036
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840712213957361947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 0.99999994
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2840712213957361946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +249,18 @@ MonoBehaviour:
   verticalSpeed: 2
   cameraTr: {fileID: 2840712213291378857}
   playerTr: {fileID: 0}
+--- !u!114 &4127636455479652110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840712213957361947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7e385d0569e784aacf4a01b5da755d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistol: {fileID: 5064067810422068626, guid: 62629d0f8f5a27e468281658381c93dd, type: 3}
+  weaponSpawnPoint: {fileID: 438311796}
+  playerCamera: {fileID: 2840712213291378857}
