@@ -7,21 +7,18 @@ public class PistolControl : MonoBehaviour
     [SerializeField]
     Transform bulletSpawnPoint;
     [SerializeField]
-    Transform kfjh;
-    [SerializeField]
     GameObject bullet;
     [SerializeField]
     Transform playerCameraTr;
-    [SerializeField]
-    float firingOffset = 19.4f;
 
+    float firingOffset = 19.4f;
     float fireRate = 0.25f; 
     float timer = 1;
     GameObject instantiatedBullet;
 
     void Update()
     {
-        if(true/*Input.GetMouseButton(1)*/)
+        if(Input.GetMouseButton(1))
         {
             timer += Time.deltaTime;
             if(timer > fireRate)

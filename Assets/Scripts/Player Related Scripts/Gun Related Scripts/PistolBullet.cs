@@ -21,7 +21,6 @@ public class PistolBullet : MonoBehaviour
 
     public void FindTarget(Vector3 rotation, float firingOffset)
     {
-        Debug.LogWarning("Firing doesn't yet work properly - PistolBullet.cs(24)");
         firingDirection.x = Mathf.Cos(rotation.normalized.y+firingOffset);
         firingDirection.z = Mathf.Sin(rotation.normalized.y);
         targetFound = true;
