@@ -32,8 +32,6 @@ public class PlayerMovementv2 : MonoBehaviour
     public float verticalSpeed = 2.0F;
     [SerializeField]
     Transform cameraTr;
-    [SerializeField]
-    Transform playerTr;
 
     Rigidbody rb;
     float y;
