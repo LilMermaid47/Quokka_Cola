@@ -25,7 +25,6 @@ public class PlayerMovementv2 : MonoBehaviour
     [SerializeField]
     float gravityPull = 200;
     
-
     [Header("Camera")]
     [SerializeField]
     float horizontalSpeed = 2.0F;
@@ -43,6 +42,10 @@ public class PlayerMovementv2 : MonoBehaviour
 
     void Start()
     {
+        // Cela Lock le curseur au milieu de l'écran et le rend invisible.
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         rb = GetComponent<Rigidbody>();
         grounded = true;
     }
