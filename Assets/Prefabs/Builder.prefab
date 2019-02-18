@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildRayon: 20
   buildFrequence: 1000
+  usine: {fileID: 6015809427857831609, guid: 192071e34b6a4c442bb7f0cb2883a3bc, type: 3}
 --- !u!54 &1341946900064774985
 Rigidbody:
   m_ObjectHideFlags: 0
