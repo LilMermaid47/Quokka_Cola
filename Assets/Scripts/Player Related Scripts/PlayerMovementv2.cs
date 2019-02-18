@@ -25,7 +25,6 @@ public class PlayerMovementv2 : MonoBehaviour
     [SerializeField]
     float gravityPull = 200;
     
-
     [Header("Camera")]
     [SerializeField]
     float horizontalSpeed = 2.0F;
@@ -43,6 +42,8 @@ public class PlayerMovementv2 : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         grounded = true;
     }
