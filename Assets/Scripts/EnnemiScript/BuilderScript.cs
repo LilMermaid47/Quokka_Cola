@@ -14,7 +14,7 @@ public class BuilderScript : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     private bool isNotBuilding = true;
-    private bool isNotGoingToPosition = true;
+    private bool estSurPosition = true;
     private int randomBuildNumber;
     private Vector3 positionBuild;
     private float randomBuildX;
@@ -38,8 +38,9 @@ public class BuilderScript : MonoBehaviour
             positionBuild = new Vector3(transform.position.x + randomBuildX, 2, transform.position.z + randomBuildZ);
             Debug.Log(positionBuild);
             navMeshAgent.SetDestination(positionBuild);
-            
-            object usineInstance = Instantiate(usine,positionBuild,Quaternion.identity);
+
         }
+        if (this.transform.position.x == randomBuildX)
+        { object usineInstance = Instantiate(usine, this.transform); }
     }
 }
