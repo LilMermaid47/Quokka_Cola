@@ -12,16 +12,16 @@ public class EnemyMovement : MonoBehaviour
     NavMeshAgent navMeshAgent;
     void Start()
     {
-        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        setDestination();
+        SetDestination();
     }
 
-    private void setDestination()
+    private void SetDestination()
     {
         Vector3 targetVector = endPosition.transform.position;
         navMeshAgent.SetDestination(targetVector);

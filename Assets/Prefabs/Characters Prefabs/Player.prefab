@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 214985365149406036}
   - component: {fileID: 2840712213957361946}
   - component: {fileID: 4127636455479652110}
+  - component: {fileID: 3172984016582974756}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -240,15 +241,14 @@ MonoBehaviour:
   speed: 20
   jumpHeight: 3
   airControlDifficulty: 20
-  jetpackFuel: 200
-  jetpackCapacity: 200
+  jetpackFuel: 5
+  jetpackCapacity: 5
   jetpackSpeed: 1000
   grounded: 0
   gravityPull: 200
   horizontalSpeed: 2
   verticalSpeed: 2
   cameraTr: {fileID: 2840712213291378857}
-  playerTr: {fileID: 0}
 --- !u!114 &4127636455479652110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +264,19 @@ MonoBehaviour:
   pistol: {fileID: 5064067810422068626, guid: 62629d0f8f5a27e468281658381c93dd, type: 3}
   weaponSpawnPoint: {fileID: 438311796}
   playerCamera: {fileID: 2840712213291378857}
+--- !u!114 &3172984016582974756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840712213957361947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f89b756ed4f9f4caa9a3ecad5732ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  jetpackBar: {fileID: 0}

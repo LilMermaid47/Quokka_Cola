@@ -13,9 +13,13 @@ public class PlayerMovementv2 : MonoBehaviour
 
     [Header("Jetpack information")]
     [SerializeField]
-    float jetpackFuel = 200;
+    public float jetpackFuel;
+    //{
+    //    get { return jetpackFuel; }
+    //    private set { if (value <= jetpackCapacity) jetpackFuel = value; else jetpackFuel = jetpackCapacity; }
+    //}
     [SerializeField]
-    float jetpackCapacity = 200;
+    public float jetpackCapacity = 5;
     [SerializeField]
     float jetpackSpeed = 1000;
 
@@ -70,7 +74,7 @@ public class PlayerMovementv2 : MonoBehaviour
         {
             rb.AddForce(speedChange, ForceMode.VelocityChange);
             if (jetpackFuel < jetpackCapacity)
-                jetpackFuel++;
+                jetpackFuel += Time.deltaTime;
         }
         else
         {
@@ -84,7 +88,7 @@ public class PlayerMovementv2 : MonoBehaviour
         else if (Input.GetButton("Jump") && !grounded && jetpackFuel > 0)
         {
             rb.AddForce(0, jetpackSpeed * Time.fixedDeltaTime, 0,ForceMode.Impulse);
-            jetpackFuel--;
+            jetpackFuel -= Time.deltaTime;
         }
         else if(!grounded)
         {
