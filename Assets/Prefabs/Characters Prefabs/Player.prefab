@@ -248,7 +248,6 @@ MonoBehaviour:
   horizontalSpeed: 2
   verticalSpeed: 2
   cameraTr: {fileID: 2840712213291378857}
-  playerTr: {fileID: 0}
 --- !u!114 &4127636455479652110
 MonoBehaviour:
   m_ObjectHideFlags: 0
