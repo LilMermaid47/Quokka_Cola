@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class BadGuySpawner : MonoBehaviour
 {
-    [SerializeField]
-    GameObject enemyPrefab;
-    [SerializeField]
-    float spawnDelay = 10f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    private float time;
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= spawnDelay)
-        {
-            time = 0;
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        }
+        
     }
 }
