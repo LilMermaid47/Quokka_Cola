@@ -2,27 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolControl : MonoBehaviour
+public class FiringControl : MonoBehaviour
 {
     [SerializeField]
     Transform bulletSpawnPoint;
     [SerializeField]
     GameObject bullet;
 
-    float firingOffset = 19.4f;
-    float fireRate = 0.25f; 
-    float timer = 1;
+    public float firingOffset { get; set; }
+    public float fireRate { get; set; }
+    public float timer { get; set; }
     GameObject instantiatedBullet;
+    private void Start()
+    {
+        firingOffset = 19.4f;
+        fireRate = bullet.GetComponent<BulletControl>().firingSpeed;
+        timer = 1;
+    }
 
     void Update()
     {
-        if(Input.GetMouseButton(1))
+        timer += Time.deltaTime;
+        if (Input.GetMouseButton(1))
         {
-            timer += Time.deltaTime;
             if(timer > fireRate)
             {
                 instantiatedBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
-                PistolBullet bulletScript = instantiatedBullet.GetComponent<PistolBullet>();
+                BulletControl bulletScript = instantiatedBullet.GetComponent<BulletControl>();
                 bulletScript.FindTarget(transform.eulerAngles, firingOffset);
                 timer = 0;
             }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolBullet : MonoBehaviour
+public class BulletControl : MonoBehaviour
 {
     [SerializeField]
-    float firingSpeed = 50;
+    public float firingSpeed = 50;
 
     Vector3 firingDirection;
     bool targetFound = false;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6292259399850246410}
   - component: {fileID: 6292259399851213770}
   - component: {fileID: 5483168788992295939}
+  - component: {fileID: 5728473357155562521}
   m_Layer: 0
   m_Name: SniperBullet
   m_TagString: Bullet
@@ -91,3 +92,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingSpeed: 5
+--- !u!136 &5728473357155562521
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292259399848959242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0022054613
+  m_Height: 0.021752732
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.00011212727, z: -5.129924e-19}

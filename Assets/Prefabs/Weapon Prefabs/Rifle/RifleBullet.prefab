@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 463019529757469570}
   - component: {fileID: 463019529758468418}
   - component: {fileID: 5113354790192152943}
+  - component: {fileID: 8920355749203663875}
   m_Layer: 0
   m_Name: RifleBullet
   m_TagString: Bullet
@@ -91,3 +92,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingSpeed: 20
+--- !u!136 &8920355749203663875
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463019529760470914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0019316147
+  m_Height: 0.011158981
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
