@@ -8,8 +8,6 @@ public class FiringControl : MonoBehaviour
     Transform bulletSpawnPoint;
     [SerializeField]
     GameObject bullet;
-    [SerializeField]
-    Transform playerCameraTr;
 
     public float firingOffset { get; set; }
     public float fireRate { get; set; }

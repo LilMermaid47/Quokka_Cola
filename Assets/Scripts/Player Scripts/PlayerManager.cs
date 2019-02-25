@@ -17,42 +17,32 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     RectTransform jetpackBar;
 
-    float jetpackFuel;
-
-    float healthScale;
-    float jetpackFuelScale;
-
-    float frameClock;
-    float currentJetpackBarScale;
+    float jetpackPercentage;
+    float healthPercentage;
+    float jetpackMaxScale = 4;
+    float healthMaxScale = 4;
 
     PlayerMovementv2 playerMovementScr;
 
     void Start()
     {
         playerMovementScr = GetComponent<PlayerMovementv2>();
-        jetpackFuel = playerMovementScr.jetpackFuel;
-        jetpackFuelScale = 4 / playerMovementScr.jetpackCapacity;
-        healthScale = 4 / maxHealth;
-        currentJetpackBarScale = 4;
     }
 
     void Update()
     {
-        frameClock += 0.1f;
-        if (frameClock > 1)
-            frameClock = 0;
-        if (frameClock == 0)
+        jetpackPercentage = playerMovementScr.jetpackFuel / playerMovementScr.jetpackCapacity;
+        if (jetpackPercentage > 1)
         {
-            if (jetpackFuel != playerMovementScr.jetpackFuel)
-            {
-                jetpackFuel = playerMovementScr.jetpackFuel;
-                currentJetpackBarScale = jetpackBar.localScale.x;
-                Debug.Log("Loop");
-            }
-            //jetpackBar.localScale = new Vector3(jetpackFuelScale * jetpackFuel, jetpackBar.localScale.y, jetpackBar.localScale.z);
+            jetpackPercentage = 1;
         }
-        Debug.Log(currentJetpackBarScale + " Current jetpack scale");
-        Debug.Log(jetpackFuelScale * jetpackFuel + " Scale to reach");
-        jetpackBar.localScale = new Vector3(Mathf.Lerp(currentJetpackBarScale, jetpackFuelScale * jetpackFuel, frameClock), jetpackBar.localScale.y, jetpackBar.localScale.z);
+        jetpackBar.localScale = new Vector3(jetpackPercentage * jetpackMaxScale, jetpackBar.localScale.y, jetpackBar.localScale.z);
+
+        healthPercentage = playerMovementScr.jetpackFuel / playerMovementScr.jetpackCapacity; // To Fix
+        if (healthPercentage > 1)
+        {
+            healthPercentage = 1;
+        }
+        healthBar.localScale = new Vector3(healthPercentage * healthMaxScale, healthBar.localScale.y, healthBar.localScale.z);
     }
 }

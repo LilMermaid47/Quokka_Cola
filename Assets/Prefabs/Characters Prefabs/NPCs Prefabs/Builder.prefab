@@ -227,7 +227,6 @@ MonoBehaviour:
   playerDistance: 15
   playerTransform: {fileID: 2840712213957361957, guid: 52ac459603a3f7d4aaf75c1d518cb41a,
     type: 3}
-  usine: {fileID: 6015809427857831609, guid: 192071e34b6a4c442bb7f0cb2883a3bc, type: 3}
 --- !u!54 &1341946900064774985
 Rigidbody:
   m_ObjectHideFlags: 0
