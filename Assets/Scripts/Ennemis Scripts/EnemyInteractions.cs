@@ -15,17 +15,4 @@ public class EnemyInteractions : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Debug.Log("Hit something");
-            OnHit();
-        }
-    }
-    public void OnHit()
-    {
-        Destroy(this.gameObject);
-    }
 }

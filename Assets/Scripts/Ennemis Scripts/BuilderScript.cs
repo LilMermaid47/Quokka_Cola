@@ -16,9 +16,10 @@ public class BuilderScript : MonoBehaviour
     [SerializeField]
     Transform playerTransform;
 
-
+    public UnityEngine.Object usine;
     private NavMeshAgent navMeshAgent;
-    private bool isNotBuilding = true;
+
+    private bool canBuild = true;
     private int randomBuildNumber;
     private Vector3 positionBuild;
     private float randomBuildX;
@@ -42,10 +43,17 @@ public class BuilderScript : MonoBehaviour
         }
         else
         {
-            randomBuildNumber = UnityEngine.Random.Range(0, (int)buildFrequence + 1);
-            if (randomBuildNumber == 1)
+            if (canBuild == false)
             {
-                BuildNewBuilding();
+                RandomPositionMovement();
+            }
+            if (navMeshAgent.destination.x == transform.position.x 
+                && navMeshAgent.destination.z==transform.position.z
+                &&canBuild)
+            {
+                canBuild = false;
+                Instantiate(usine,transform.position,Quaternion.identity);
+                RandomPositionMovement();
             }
         }
     }
@@ -55,14 +63,15 @@ public class BuilderScript : MonoBehaviour
         fleeVector = transform.position + (transform.position - playerTransform.position);
         navMeshAgent.SetDestination(fleeVector);
     }
-
-    private void BuildNewBuilding()
+    private Vector3 RandomPositionGenerator()
     {
-        isNotBuilding = false;
         randomBuildX = UnityEngine.Random.Range(0.0f, buildRayon);
         randomBuildZ = UnityEngine.Random.Range(0.0f, buildRayon);
-        positionBuild = new Vector3(transform.position.x + randomBuildX, 0, transform.position.z + randomBuildZ);
-        Debug.Log(positionBuild);
-        navMeshAgent.SetDestination(positionBuild);
+        return( new Vector3(randomBuildX, randomBuildZ));
+    }
+    private void RandomPositionMovement()
+    {
+        Vector3 randomPosition = RandomPositionGenerator();
+        navMeshAgent.SetDestination(randomPosition);
     }
 }

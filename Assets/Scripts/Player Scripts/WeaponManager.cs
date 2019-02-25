@@ -6,11 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     [Header("Weapons")]
     [SerializeField]
-    GameObject Pistol;
-    [SerializeField]
-    GameObject Rifle;
-    [SerializeField]
-    GameObject Sniper;
+    GameObject pistol;
 
     [Header("Required Fields")]
     [SerializeField]
@@ -54,16 +50,10 @@ public class WeaponManager : MonoBehaviour
         switch(keyPressed)
         {
             case 1:
-                spawnedWeapon = Instantiate(Pistol, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon = Instantiate(pistol, weaponSpawnPoint.position, transform.rotation);
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
             case 2:
-                spawnedWeapon = Instantiate(Rifle, weaponSpawnPoint.position, transform.rotation);
-                spawnedWeapon.transform.SetParent(transform, true);
-                break;
-            case 3:
-                spawnedWeapon = Instantiate(Sniper, weaponSpawnPoint.position, transform.rotation);
-                spawnedWeapon.transform.SetParent(transform, true);
                 break;
             case 4:
                 break;
