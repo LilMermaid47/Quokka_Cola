@@ -9,7 +9,7 @@ public class PistolBullet : MonoBehaviour
 
     Vector3 firingDirection;
     bool targetFound = false;
-    // Update is called once per frame
+
     void Update()
     {
         if(targetFound)
