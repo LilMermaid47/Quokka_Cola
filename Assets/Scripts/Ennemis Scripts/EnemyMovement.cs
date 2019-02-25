@@ -6,13 +6,13 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    Transform endPosition;
-
     NavMeshAgent navMeshAgent;
+    GameObject player;
+    Vector3 position;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void SetDestination()
     {
-        Vector3 targetVector = endPosition.transform.position;
-        navMeshAgent.SetDestination(targetVector);
+        position = player.transform.position;
+        navMeshAgent.SetDestination(position);
     }
 }
