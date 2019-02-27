@@ -65,7 +65,7 @@ public class WeaponManager : MonoBehaviour
                 spawnedWeapon = Instantiate(Sniper, weaponSpawnPoint.position, transform.rotation);
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
-            case 3:
+            case 4:
                 spawnedWeapon = Instantiate(Sniper, weaponSpawnPoint.position, transform.rotation);
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
