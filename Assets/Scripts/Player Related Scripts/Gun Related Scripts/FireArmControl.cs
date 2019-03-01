@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolControl : MonoBehaviour
+public class FireArmControl : MonoBehaviour
 {
     [SerializeField]
     Transform bulletSpawnPoint;
@@ -10,8 +10,9 @@ public class PistolControl : MonoBehaviour
     GameObject bullet;
     [SerializeField]
     Transform playerCameraTr;
+    [SerializeField]
+    float fireRate;
 
-    float fireRate = 0.25f; 
     float timer = 1;
     GameObject instantiatedBullet;
 
@@ -20,14 +21,13 @@ public class PistolControl : MonoBehaviour
         if(Input.GetMouseButton(1))
         {
             timer += Time.deltaTime;
-            if(timer > fireRate)
+            if(timer >= fireRate)
             {
                 instantiatedBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
-                PistolBullet bulletScript = instantiatedBullet.GetComponent<PistolBullet>();
+                BulletControl bulletScript = instantiatedBullet.GetComponent<BulletControl>();
                 bulletScript.findTarget(bulletSpawnPoint.localPosition);
                 timer = 0;
             }
-
         }
     }
 }
