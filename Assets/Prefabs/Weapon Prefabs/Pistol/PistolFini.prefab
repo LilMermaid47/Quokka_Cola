@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3561087462350977519}
-  - component: {fileID: 2784216791111537603}
+  - component: {fileID: 8446891182063459776}
   m_Layer: 0
   m_Name: PistolFini
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2784216791111537603
+--- !u!114 &8446891182063459776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3322161044941818441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd2dfa36bf816148aeb0b8503f214f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f2b2d519f5354c4ebc376ac76c1ceba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 7123494021310620541}
   bullet: {fileID: 5327043486452918305, guid: 2c9a3e88ce3e0ef4c85b7dce520b3795, type: 3}
+  playerCameraTr: {fileID: 0}
+  fireRate: 3
 --- !u!1 &4604637874391728265
 GameObject:
   m_ObjectHideFlags: 0

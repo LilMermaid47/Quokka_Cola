@@ -16,9 +16,9 @@ public class PistolControl : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
         if(Input.GetMouseButton(1))
         {
-            timer += Time.deltaTime;
             if(timer > fireRate)
             {
                 instantiatedBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);

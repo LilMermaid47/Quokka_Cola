@@ -5,16 +5,13 @@ using UnityEngine;
 public class BulletControl : MonoBehaviour
 {
     [SerializeField]
-    float firingSpeed;
-    [SerializeField]
     float maxPiercing;
     [SerializeField]
     float vitesseProjectile;
 
-
     Vector3 firingDirection;
     bool targetFound = false;
-    // Update is called once per frame
+
     void Update()
     {
         if(targetFound)

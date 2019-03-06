@@ -14,7 +14,7 @@ public class PistolBullet : MonoBehaviour
     {
         if(targetFound)
         {
-            Destroy(gameObject, 5);
+            Destroy(gameObject, 4);
             transform.Translate(firingDirection);
         }
     }

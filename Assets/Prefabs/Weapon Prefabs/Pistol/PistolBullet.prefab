@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5327043486452691969}
   - component: {fileID: 5327043486454019105}
   - component: {fileID: 5327043486455117537}
-  - component: {fileID: 352764322070468071}
   - component: {fileID: 7283320687422893838}
+  - component: {fileID: 1528708617433140409}
   m_Layer: 0
   m_Name: PistolBullet
   m_TagString: Bullet
@@ -79,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &352764322070468071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327043486452918305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c8b0755e8c6bd4bbb6b7f58520fa33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firingSpeed: 50
 --- !u!136 &7283320687422893838
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -106,3 +93,18 @@ CapsuleCollider:
   m_Height: 0.0049414723
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: -0.0007727442}
+--- !u!114 &1528708617433140409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327043486452918305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46661f2d7b73b904398721918ccd98c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingSpeed: 50
+  maxPiercing: 1
+  vitesseProjectile: 50
