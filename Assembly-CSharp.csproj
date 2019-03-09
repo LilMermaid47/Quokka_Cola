@@ -65,13 +65,13 @@
     <Compile Include="Assets\Scripts\Ennemis Scripts\EnemyInteractions.cs" />
     <Compile Include="Assets\Scripts\Ennemis Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Jeu Scripts\WaveManager.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\Gun Related Scripts\BulletControl.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\Gun Related Scripts\FireArmControl.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\Gun Related Scripts\PistolBullet.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\Gun Related Scripts\PistolControl.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerMovementv2.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\WeaponManager.cs" />
+    <Compile Include="Assets\Scripts\Weapons Scripts\BulletControl.cs" />
+    <Compile Include="Assets\Scripts\Weapons Scripts\ConvGunControl.cs" />
+    <Compile Include="Assets\Scripts\Weapons Scripts\FireArmControl.cs" />
+    <Compile Include="Assets\Scripts\Weapons Scripts\GravGunControl.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Bastien/Desktop/Quokka_Cola/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

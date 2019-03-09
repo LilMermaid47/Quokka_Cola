@@ -11,6 +11,18 @@ public class WeaponManager : MonoBehaviour
     GameObject Rifle;
     [SerializeField]
     GameObject Sniper;
+    [SerializeField]
+    GameObject LanceDisque;
+    [SerializeField]
+    GameObject Weapon5;
+    [SerializeField]
+    GameObject Weapon6;
+    [SerializeField]
+    GameObject Weapon7;
+    [SerializeField]
+    GameObject Weapon8;
+    [SerializeField]
+    GameObject Weapon9;
 
     [Header("Required Fields")]
     [SerializeField]
@@ -21,7 +33,6 @@ public class WeaponManager : MonoBehaviour
     GameObject spawnedWeapon;
     bool hasGun = false;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) SpawnWeapon(1);
@@ -49,6 +60,7 @@ public class WeaponManager : MonoBehaviour
             hasGun = true;
         }
     }
+
     void InstantiateWeapon(int keyPressed)
     {
         switch(keyPressed)
@@ -66,7 +78,27 @@ public class WeaponManager : MonoBehaviour
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
             case 4:
-                spawnedWeapon = Instantiate(Sniper, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon = Instantiate(LanceDisque, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon.transform.SetParent(transform, true);
+                break;
+            case 5:
+                spawnedWeapon = Instantiate(Weapon5, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon.transform.SetParent(transform, true);
+                break;
+            case 6:
+                spawnedWeapon = Instantiate(Weapon6, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon.transform.SetParent(transform, true);
+                break;
+            case 7:
+                spawnedWeapon = Instantiate(Weapon7, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon.transform.SetParent(transform, true);
+                break;
+            case 8:
+                spawnedWeapon = Instantiate(Weapon8, weaponSpawnPoint.position, transform.rotation);
+                spawnedWeapon.transform.SetParent(transform, true);
+                break;
+            case 9:
+                spawnedWeapon = Instantiate(Weapon9, weaponSpawnPoint.position, transform.rotation);
                 spawnedWeapon.transform.SetParent(transform, true);
                 break;
             case 0:
