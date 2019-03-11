@@ -243,7 +243,7 @@ MonoBehaviour:
   fleeRandomMax: 20
   randomMinTimeForNewBuilding: 10
   randomMaxTimeForNewBuilding: 35
-  buildRayon: 2
+  buildRayon: 40
   usine: {fileID: 6015809427857831609, guid: 192071e34b6a4c442bb7f0cb2883a3bc, type: 3}
 --- !u!1 &2531022490494670311
 GameObject:

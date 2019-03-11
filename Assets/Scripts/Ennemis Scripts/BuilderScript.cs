@@ -70,12 +70,16 @@ public class BuilderScript : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Place un batiment où est situé le builder
+    /// </summary>
     private void Build()
     {
         Instantiate(usine, transform.position, Quaternion.identity);
     }
-
+    /// <summary>
+    /// Génère une position au hasard pour éloigner le builder
+    /// </summary>
     private void RandomPositionMovement()
     {
         float randomBuildX = UnityEngine.Random.Range(0, buildRayon);
@@ -83,6 +87,9 @@ public class BuilderScript : MonoBehaviour
         Vector3 randomPosition = (new Vector3(randomBuildX, randomBuildZ));
         builderAgent.SetDestination(this.transform.position + randomPosition);
     }
+    /// <summary>
+    /// Fait que le builder s'enfuit du joueur
+    /// </summary>
     void flee()
     {
         startingTransform = transform;
