@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3172984016582974756}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7e385d0569e784aacf4a01b5da755d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistol: {fileID: 5064067810422068626, guid: 62629d0f8f5a27e468281658381c93dd, type: 3}
+  Pistol: {fileID: 0}
+  Rifle: {fileID: 0}
+  Sniper: {fileID: 0}
   weaponSpawnPoint: {fileID: 438311796}
   playerCamera: {fileID: 2840712213291378857}
 --- !u!114 &3172984016582974756

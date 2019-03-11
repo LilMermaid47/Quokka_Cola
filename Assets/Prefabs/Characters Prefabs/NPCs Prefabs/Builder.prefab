@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 1341946900064774964}
   - component: {fileID: 1341946900064774965}
   - component: {fileID: 1341946900064774966}
-  - component: {fileID: 3343004812819436549}
   - component: {fileID: 1341946900064774985}
+  - component: {fileID: 5296154043105766262}
   m_Layer: 0
   m_Name: Builder
   m_TagString: Untagged
@@ -210,24 +210,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3343004812819436549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341946900064774960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772bc980173155b49adfcbbf652c8688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildRayon: 20
-  buildFrequence: 100
-  playerDistance: 15
-  playerTransform: {fileID: 2840712213957361957, guid: 52ac459603a3f7d4aaf75c1d518cb41a,
-    type: 3}
-  usine: {fileID: 6015809427857831609, guid: 192071e34b6a4c442bb7f0cb2883a3bc, type: 3}
 --- !u!54 &1341946900064774985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244,6 +226,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5296154043105766262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341946900064774960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158013f93443f694686668c3a5953436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fleeDistance: 10
+  fleeRandomMin: 10
+  fleeRandomMax: 20
+  randomMinTimeForNewBuilding: 10
+  randomMaxTimeForNewBuilding: 35
+  buildRayon: 2
+  usine: {fileID: 6015809427857831609, guid: 192071e34b6a4c442bb7f0cb2883a3bc, type: 3}
 --- !u!1 &2531022490494670311
 GameObject:
   m_ObjectHideFlags: 0

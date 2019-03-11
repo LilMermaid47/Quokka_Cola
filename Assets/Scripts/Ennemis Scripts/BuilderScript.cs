@@ -6,73 +6,95 @@ using UnityEngine.AI;
 
 public class BuilderScript : MonoBehaviour
 {
+    [SerializeField]
+    float fleeDistance=10;
 
     [SerializeField]
-    float buildRayon = 10f;
+    float fleeRandomMin = 10;
     [SerializeField]
-    int buildFrequence = 1000;
+    float fleeRandomMax = 20;
+
     [SerializeField]
-    float playerDistance = 15f;
+    float randomMinTimeForNewBuilding = 10;
     [SerializeField]
-    Transform playerTransform;
+    float randomMaxTimeForNewBuilding = 35;
+
+    [SerializeField]
+    float buildRayon=2;
 
     public UnityEngine.Object usine;
-    private NavMeshAgent navMeshAgent;
 
-    private bool canBuild = true;
-    private int randomBuildNumber;
-    private Vector3 positionBuild;
-    private float randomBuildX;
-    private float randomBuildZ;
-    private Vector3 fleeVector;
-    private float fleeDistance;
+    private Transform playerTransform;
+    private NavMeshAgent builderAgent;
+    private Transform builderTransform;
+    private Transform startingTransform;
+    private bool canBuild = false;
+    private float resetBuildingTime;
+    private float time=0;
 
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        builderAgent = this.GetComponent<NavMeshAgent>();
+        builderTransform = this.GetComponent<Transform>();
+        resetBuildingTime = UnityEngine.Random.Range(randomMinTimeForNewBuilding, randomMaxTimeForNewBuilding);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distance = Vector3.Distance(transform.position, playerTransform.position);
-        if (distance < playerDistance)
+        float distance = Vector3.Distance(playerTransform.position, builderTransform.position);
+        if (distance <= fleeDistance)
         {
-            RunAway();
+            Debug.Log("fleeing");
+            flee();
         }
         else
         {
-            if (canBuild == false)
-            {
-                RandomPositionMovement();
-            }
-            if (navMeshAgent.destination.x == transform.position.x 
-                && navMeshAgent.destination.z==transform.position.z
-                &&canBuild)
+            if (canBuild)
             {
                 canBuild = false;
-                Instantiate(usine,transform.position,Quaternion.identity);
+                Build();
                 RandomPositionMovement();
+            }
+            else
+            {   
+                time += Time.deltaTime;
+
+                if (time >= resetBuildingTime)
+                {
+                    time = 0;
+                    canBuild = true;
+                }
             }
         }
     }
 
-    private void RunAway()
+    private void Build()
     {
-        fleeVector = transform.position + (transform.position - playerTransform.position);
-        navMeshAgent.SetDestination(fleeVector);
+        Instantiate(usine, transform.position, Quaternion.identity);
     }
-    private Vector3 RandomPositionGenerator()
-    {
-        System.Random rng = new System.Random(42); 
-        randomBuildX = rng.Next(0, (int)buildRayon);
-        randomBuildZ = rng.Next(0, (int)buildRayon);
-        return( new Vector3(randomBuildX, randomBuildZ));
-    }
+
     private void RandomPositionMovement()
     {
-        Vector3 randomPosition = RandomPositionGenerator();
-        navMeshAgent.SetDestination(randomPosition);
+        float randomBuildX = UnityEngine.Random.Range(0, buildRayon);
+        float randomBuildZ = UnityEngine.Random.Range(0, buildRayon);
+        Vector3 randomPosition = (new Vector3(randomBuildX, randomBuildZ));
+        builderAgent.SetDestination(this.transform.position + randomPosition);
+    }
+    void flee()
+    {
+        startingTransform = transform;
+        transform.rotation = Quaternion.LookRotation(transform.position - playerTransform.position);
+        Vector3 fleePosition = transform.position + transform.forward * UnityEngine.Random.Range(fleeRandomMin,fleeRandomMax);
+        NavMeshHit hit;
+
+        NavMesh.SamplePosition(fleePosition, out hit, 5, 1 << NavMesh.GetAreaFromName("Walkable"));
+
+        transform.position = startingTransform.position;
+        transform.rotation = startingTransform.rotation;
+
+        builderAgent.SetDestination(hit.position);
     }
 }
