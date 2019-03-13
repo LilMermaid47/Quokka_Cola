@@ -11,7 +11,7 @@ public class ConvGunControl : FireArmControl
         {
             instantiatedBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
             BulletControl bulletScript = instantiatedBullet.GetComponent<BulletControl>();
-            bulletScript.findTarget(bulletSpawnPoint.localPosition);
+            bulletScript.FindTarget(bulletSpawnPoint.localPosition);
             timer = 0;
         }
     }

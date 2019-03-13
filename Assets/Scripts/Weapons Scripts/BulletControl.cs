@@ -5,26 +5,29 @@ using UnityEngine;
 public class BulletControl : MonoBehaviour
 {
     [SerializeField]
-    float maxPiercing;
-    [SerializeField]
-    float vitesseProjectile;
+    int maxPierce = 1;
 
     Vector3 firingDirection;
     bool targetFound = false;
+    int pierce = 0;
 
     void Update()
     {
-        if(targetFound)
-        {
-            Destroy(gameObject, 5);
-            transform.Translate(firingDirection);
-        }
+        transform.Translate(firingDirection);
+        if(pierce == maxPierce) { Destroy(gameObject); }
     }
 
-    public void findTarget(Vector3 gunPosition)
+    public void FindTarget(Vector3 relativeSpawnPoint)
     {
-        //Debug.LogWarning("Firing doesn't yet work properly - PistolBullet.cs(24)");
-        firingDirection = (transform.position - gunPosition).normalized;
+        firingDirection = (relativeSpawnPoint).normalized;
         targetFound = true;
+        Destroy(gameObject, 5);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        pierce += 1;
+        if (collision.collider.tag == "Ground")
+            Destroy(gameObject);
     }
 }

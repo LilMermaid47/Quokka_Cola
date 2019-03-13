@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46661f2d7b73b904398721918ccd98c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPiercing: 1
+  maxPierce: 10
   vitesseProjectile: 50
 --- !u!65 &6815102559870743339
 BoxCollider:

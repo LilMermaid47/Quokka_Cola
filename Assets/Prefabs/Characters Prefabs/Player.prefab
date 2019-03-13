@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438311795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.672, y: 0.07327307, z: 0.774}
-  m_LocalScale: {x: 0.3, y: 0.17040241, z: 1}
+  m_LocalPosition: {x: 0.67199993, y: -0.166, z: 0.72}
+  m_LocalScale: {x: 0.3, y: 0.1704024, z: 1}
   m_Children: []
-  m_Father: {fileID: 2840712213957361957}
-  m_RootOrder: 1
+  m_Father: {fileID: 2840712213291378857}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2840712213291378861
 GameObject:
@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 2840712213291378857}
   - component: {fileID: 2840712213291378858}
   - component: {fileID: 2840712213291378860}
+  - component: {fileID: 7215120554607292531}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -58,7 +59,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.279, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 438311796}
   m_Father: {fileID: 2840712213957361957}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,6 +114,29 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2840712213291378861}
   m_Enabled: 1
+--- !u!114 &7215120554607292531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840712213291378861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7e385d0569e784aacf4a01b5da755d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pistol: {fileID: 0}
+  Rifle: {fileID: 0}
+  Sniper: {fileID: 0}
+  LanceDisque: {fileID: 0}
+  Weapon5: {fileID: 0}
+  Weapon6: {fileID: 0}
+  Weapon7: {fileID: 0}
+  Weapon8: {fileID: 0}
+  Weapon9: {fileID: 0}
+  weaponSpawnPoint: {fileID: 0}
+  playerCamera: {fileID: 0}
 --- !u!1 &2840712213957361947
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +151,6 @@ GameObject:
   - component: {fileID: 2840712213957361945}
   - component: {fileID: 214985365149406036}
   - component: {fileID: 2840712213957361946}
-  - component: {fileID: 4127636455479652110}
   - component: {fileID: 3172984016582974756}
   m_Layer: 0
   m_Name: Player
@@ -147,7 +171,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.7605385, z: 1}
   m_Children:
   - {fileID: 2840712213291378857}
-  - {fileID: 438311796}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -249,21 +272,6 @@ MonoBehaviour:
   horizontalSpeed: 2
   verticalSpeed: 2
   cameraTr: {fileID: 2840712213291378857}
---- !u!114 &4127636455479652110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840712213957361947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7e385d0569e784aacf4a01b5da755d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pistol: {fileID: 5064067810422068626, guid: 62629d0f8f5a27e468281658381c93dd, type: 3}
-  weaponSpawnPoint: {fileID: 438311796}
-  playerCamera: {fileID: 2840712213291378857}
 --- !u!114 &3172984016582974756
 MonoBehaviour:
   m_ObjectHideFlags: 0
